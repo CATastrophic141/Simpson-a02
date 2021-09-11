@@ -46,7 +46,7 @@ class Checkout {
         return subTotal;
     }
     public double taxCalc(double subTotal) {
-        return subTotal + subTotal * TAX_RATE;
+        return subTotal + subTotal*TAX_RATE;
     }
 }
 
@@ -62,7 +62,7 @@ public class Solution10 {
             double subTotal = checkout.subtotalCalc(numItems, itemQuantity, itemPrice);
             double finalTotal = checkout.taxCalc(subTotal);
             System.out.printf("Your subtotal is: $%.2f%n", subTotal);
-            System.out.printf("Total tax is: $%.2f%n", subTotal* Checkout.TAX_RATE);
+            System.out.printf("Total tax is: $%.2f%n", subTotal*Checkout.TAX_RATE);
             System.out.printf("The total price is: $%.2f%n", finalTotal);
     }
 }
