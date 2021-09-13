@@ -6,16 +6,17 @@
 /* Pseudocode
 * Import proper utilities
 * Create class for Tax calculation
-* Create method for Wisconsin tax calculation
+* Create methods for Wisconsin tax calculation (Calc and string generation)
 *    If Entered state abbreviation is WI
 *          Calculate WI tax
-*          Print subtotal amount
-*          Print tax amount
+*          Return string of of subtotal and tax amount
 *          Return total price, subtotal + tax
 * Create main class
 * Prompt user for order price
+* Prompt user for state
 * Save user input to order variable
-* Call upon Wisconsin tax Calc
+* Call upon Wisconsin tax calc method
+* Call upon Wisconsin tax string string method
 * Print total price
 * */
 
@@ -24,17 +25,16 @@ import java.util.Scanner;
 
 class TaxCalc {
     private static final double WI_TAX = 0.055;
-    public void wiTaxPrint(String userState, double order) {
-        if(Objects.equals(userState, "WI")) {
-            System.out.printf("Your subtotal is: $%.2f:%n", order);
+    public String wiTaxPrint(String userState, double order) {
+        if(Objects.equals(userState, "Wisconsin")) {
             double tax = (Math.ceil(order * 100) / 100) * WI_TAX;
-            System.out.printf("The tax amount is $%.2f:%n", tax);
-
+            return "Your subtotal is: $" + order + "\nThe tax amount is: $" + tax + "\n";
         }
+        return "";
     }
     public double wiTaxAmt (String userState, double order){
         double tax = 0;
-        if(Objects.equals(userState, "WI"))
+        if(Objects.equals(userState, "Wisconsin"))
             tax = (Math.ceil(order * 100) / 100) * WI_TAX;
         return tax+order;
     }
@@ -49,8 +49,8 @@ public class Solution14 {
     subtotal = (Math.ceil(subtotal * 100) / 100);
     System.out.printf("Enter your state:%n");
     String state = input.next();
-    tax.wiTaxPrint(state, subtotal);
+    String wiTax= tax.wiTaxPrint(state, subtotal);
     double totalVal = tax.wiTaxAmt(state, subtotal);
-    System.out.printf("Your total is $%.2f", totalVal);
+    System.out.printf("%sYour total is $%.2f", wiTax, totalVal);
     }
 }
