@@ -12,6 +12,7 @@
 * Prompt user for principal, save input to principal variable
 * Prompt user for interest rate, save input to rate variable
 * Prompt user for number of years, save input to years variable
+* Call on simple interest function using saved variables
 * Print out result*/
 
 import java.util.Scanner;
