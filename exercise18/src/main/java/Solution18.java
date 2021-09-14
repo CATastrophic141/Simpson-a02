@@ -45,8 +45,7 @@ public class Solution18 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         TempConverter temp = new TempConverter();
-        System.out.printf("Enter C to convert from Fahrenheit to Celsius.%n" +
-                "Or press F to convert from Celsius to Fahrenheit.%n");
+        System.out.printf("Enter C to convert from Fahrenheit to Celsius%nor press F to convert from Celsius to Fahrenheit.%n");
         String userIn = input.nextLine();
         String tempType1 = "Null";
         String tempType2 = "Null";

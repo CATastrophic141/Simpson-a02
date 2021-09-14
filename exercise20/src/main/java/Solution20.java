@@ -47,12 +47,12 @@ class TaxCalc {
 
     public String wiTaxPrint(String userState, String userCounty, double order) {
         if (Objects.equals(userState, WI)) {
-            double tax = (Math.ceil(order*100) / 100) * WI_TAX;
+            double tax = (Math.ceil((order * WI_TAX)*100) / 100);
             if (Objects.equals(userCounty, "Eau")) {
-                tax = tax + order*EAU_TAX;
+                tax = tax + (Math.ceil((order * EAU_TAX)*100) / 100);
                 return SUB_IS + (Math.ceil(order*100) / 100) + TAX_IS + tax + "\n";
             } else if (Objects.equals(userCounty, "Dunn")) {
-                tax = tax + order*DUNN_TAX;
+                tax = tax + (Math.ceil((order * DUNN_TAX)*100) / 100);
                 return SUB_IS + (Math.ceil(order*100) / 100) + TAX_IS + tax + "\n";
             }
             return SUB_IS + (Math.ceil(order*100) / 100) + TAX_IS + tax + "\n";
@@ -63,17 +63,17 @@ class TaxCalc {
     public double taxAmt(String userState, String userCounty, double order) {
         double tax = 0;
         if (Objects.equals(userState, WI)) {
-            tax = (Math.ceil(order * 100) / 100) * WI_TAX;
+            tax = (Math.ceil((order * WI_TAX)*100) / 100);
             if (Objects.equals(userCounty, "Eau")) {
-                tax = tax + order * EAU_TAX;
+                tax = tax + (Math.ceil((order * EAU_TAX)*100) / 100);
             } else if (Objects.equals(userCounty, "Dunn")) {
-                tax = tax + order * DUNN_TAX;
+                tax = tax + (Math.ceil((order * DUNN_TAX)*100) / 100);
             }
         }
         else if (Objects.equals(userState, IL)) {
-            tax = (Math.ceil(order*100) / 100) * IL_TAX;
+            tax = (Math.ceil((order * IL_TAX)*100) / 100);
         }
-        return (Math.ceil((tax+order) * 100) / 100);
+        return tax+order;
     }
 
     public String ilTaxPrint(String userState, double order) {

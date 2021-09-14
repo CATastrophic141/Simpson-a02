@@ -41,6 +41,6 @@ public class Solution22 {
         System.out.printf("enter the third number:%n");
         double num3 = input.nextDouble();
         double highNum = numComp.threeNumComp(num1, num2, num3);
-        System.out.printf("The highest number is %f", highNum);
+        System.out.printf("The highest number is %.3f", highNum);
     }
 }

@@ -27,8 +27,8 @@ class Interest {
     }
     public void interestPrint(double principal, double rate, int years) {
         double finalAmt = interestCalc(principal, rate, years);
-        System.out.printf("After %d years at an investment rate of %%%.2f (%.4f), a principal of $%.2f will be worth $%.2f",
-                years, rate, rate/100, (Math.ceil(principal*100)/100), finalAmt);
+        System.out.printf("After %d years at an investment rate of %%%.2f, a principal of $%.2f will be worth $%.2f",
+                years, rate, (Math.ceil(principal*100)/100), finalAmt);
     }
 }
 

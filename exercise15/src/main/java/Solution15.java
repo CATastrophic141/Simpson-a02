@@ -28,11 +28,12 @@ class Login {
     }
 }
 
+//Password is Pass123$
 public class Solution15 {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         Login login = new Login();
-        String setPassword = "Pass123";
+        String setPassword = "Pass123$";
         System.out.printf("What is the password?%n");
         String userIn = input.nextLine();
         login.passwordMatch(userIn, setPassword);

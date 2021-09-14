@@ -82,11 +82,11 @@ class Troubleshoot {
                     return "Get your car in for service";
                 } else if (Objects.equals(userIn6, "n")) {
                     return "Check to ensure the choke is opening and closing";
-                } else if (Objects.equals(userIn5, "n")) {
+                }
+            } else if (Objects.equals(userIn5, "n")) {
                     return "This should not be possible";
                 }
             }
-        }
         return DEFAULT;
     }
 

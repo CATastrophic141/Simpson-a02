@@ -26,7 +26,7 @@ import java.util.Scanner;
 class TaxCalc {
     private static final double WI_TAX = 0.055;
     public String wiTaxPrint(String userState, double order) {
-        if(Objects.equals(userState, "Wisconsin")) {
+        if(Objects.equals(userState, "Wisconsin") || Objects.equals(userState, "WI")) {
             double tax = (Math.ceil(order * 100) / 100) * WI_TAX;
             return "Your subtotal is: $" + order + "\nThe tax amount is: $" + tax + "\n";
         }
@@ -34,7 +34,7 @@ class TaxCalc {
     }
     public double wiTaxAmt (String userState, double order){
         double tax = 0;
-        if(Objects.equals(userState, "Wisconsin"))
+        if(Objects.equals(userState, "Wisconsin") || Objects.equals(userState, "WI"))
             tax = (Math.ceil(order * 100) / 100) * WI_TAX;
         return tax+order;
     }

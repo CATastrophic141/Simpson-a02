@@ -46,7 +46,7 @@ public class Solution08 {
         int numPeople = input.nextInt();
         System.out.printf("How many pizzas are there to share?%n");
         int numPizza = input.nextInt();
-        System.out.printf("How many slices of pizza per person?%n");
+        System.out.printf("How many slices per pizza?%n");
         int numSlices = numPizza * input.nextInt();
         pCalc.pizzaPrint(numPeople, numPizza, numSlices);
     }
