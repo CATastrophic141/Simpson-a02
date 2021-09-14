@@ -30,7 +30,7 @@ If Entered state abbreviation is WI
 * Save user input to
 * Call Wisconsin tax Calc
 * Call Illinois tax Calc
-* Print total price*/
+* Print total price */
 
 import java.util.Objects;
 import java.util.Scanner;
