@@ -16,8 +16,7 @@
  * If monthNum == 1-12
  *           Call num to month method
  * Else
- *           Print "enter a valid number, 1-12"
- * */
+ *           Print "enter a valid number, 1-12" */
 
 import java.util.Scanner;
 
@@ -36,7 +35,7 @@ class MonthConv {
             case 10 -> System.out.print("The month is October");
             case 11 -> System.out.print("The month is November");
             case 12 -> System.out.print("The month is December");
-            default -> System.exit(-1);
+            default -> System.exit(0); //Emergency exit in the case that number entry failed
         }
     }
 }

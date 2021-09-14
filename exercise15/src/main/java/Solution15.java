@@ -12,7 +12,7 @@
        Else, print "I don't know you"
 * Create main class
 * Prompt user for username and password
-* Call password comparison method*/
+* Call password comparison method */
 
 import java.util.Objects;
 import java.util.Scanner;

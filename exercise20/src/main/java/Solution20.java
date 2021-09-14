@@ -32,11 +32,8 @@ If Entered state abbreviation is WI
 * Call Illinois tax Calc
 * Print total price*/
 
-
 import java.util.Objects;
 import java.util.Scanner;
-
-
 
 class TaxCalc {
     private static final double WI_TAX = 0.05;

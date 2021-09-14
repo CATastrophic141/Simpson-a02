@@ -1,32 +1,25 @@
 /*
  *  UCF COP3330 Fall 2021 Assignment 2 Solution
- *  Copyright 2021 first_name last_name
+ *  Copyright 2021 Rylan Simpson
  */
-
-/*Division isn’t always exact, and sometimes you’ll write programs that will need to deal with the leftovers as a whole number instead of a decimal.
-
-Write a program to evenly divide pizzas.
-Prompt for the number of people, the number of pizzas, and the number of slices per pizza.
-Ensure that the number of pieces comes out even.
-Display the number of pieces of pizza each person should get.
-If there are leftovers, show the number of leftover pieces.*/
 
 /* Pseudocode
 Import proper functionality
 Create class for division,and modulus calculation functions
-Use modulus operator to determine the remaining number of pizza slices
-User division calculator (int) to calculate the number of pizza slices per person
+Create modulus method, use modulus operator to determine the remaining number of pizza slices
+Create division method, use division calculator (int) to calculate the number of pizza slices per person
+Create printing method, using other methods of the class
+            Print confirmation of entered variables
+            Print how many slices per person
+            Print remaining slices
 Create main class
-create scanner object
-create pizzaCalc object
 Prompt user to enter the number of people
+Save input to variable
 Prompt user to enter the number of pizzas
+Save input to variable
 Prompt user to enter the number of slices per person
-Print confirmation of the number of people and pizza slices
-Call method to divide number of pizza slices by number of people
-Call method to modulus number of pizza slices by number of people
-Print the number of slices per person
-Print the number of remaining pizzas
+Save input to variable
+Call on pizza printing method
  */
 
 import java.util.Scanner;
@@ -37,6 +30,11 @@ class PizzaCalc {
     }
     public int pizzaRemainder(int people, int pizzaSlices){
         return pizzaSlices%people;
+    }
+    public void pizzaPrint(int people, int pizza, int pizzaSlices) {
+        System.out.printf("There are %d people sharing %d pizzas (%d slices in total)%n", people, pizza, pizzaSlices);
+        System.out.printf("Each person can have %d slices%n", pizzaDivision(people, pizzaSlices));
+        System.out.printf("There will be %d remaining slices%n", pizzaRemainder(people, pizzaSlices));
     }
 }
 
@@ -50,10 +48,6 @@ public class Solution08 {
         int numPizza = input.nextInt();
         System.out.printf("How many slices of pizza per person?%n");
         int numSlices = numPizza * input.nextInt();
-        int numPerPerson = pCalc.pizzaDivision(numPeople, numSlices);
-        int remainingSlices = pCalc.pizzaRemainder(numPeople, numSlices);
-        System.out.printf("There are %d people sharing %d pizzas (%d slices in total)%n", numPeople, numPizza, numSlices);
-        System.out.printf("Each person can have %d slices%n",numPerPerson);
-        System.out.printf("There will be %d remaining slices%n",remainingSlices);
+        pCalc.pizzaPrint(numPeople, numPizza, numSlices);
     }
 }

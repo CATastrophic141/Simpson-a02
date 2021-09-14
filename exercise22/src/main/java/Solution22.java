@@ -1,6 +1,6 @@
 /*
  *  UCF COP3330 Fall 2021 Assignment 2 Solution
- *  Copyright 2021 first_name last_name
+ *  Copyright 2021 Rylan Simpson
  */
 
 /* Pseudocode
@@ -18,6 +18,10 @@ class NumCompare{
     public double threeNumComp(double num1, double num2, double num3){
         double highestNum = 0;
         double[] arrComp = {num1, num2, num3};
+        if (num1 == num2 && num1 == num3){
+            System.out.print("All of the numbers are equal");
+            System.exit(0);
+        }
         for (int i = 0; i<3; i++){
             if (arrComp[i] >= highestNum)
                 highestNum = arrComp[i];

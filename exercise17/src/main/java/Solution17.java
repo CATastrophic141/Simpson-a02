@@ -27,6 +27,7 @@ import java.util.Scanner;
 
 class DrunkDrivingCheck {
     static final String ERROR_MSG = "Please enter a valid response";
+    
     double bloodAlcohol (int gender, double oz, double weight, double hours) {
         if (gender == 1) {
             double bacMen = (oz * 5.14 / weight * 0.73) - 0.015 * hours;

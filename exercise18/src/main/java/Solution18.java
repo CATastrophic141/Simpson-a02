@@ -1,6 +1,6 @@
 /*
  *  UCF COP3330 Fall 2021 Assignment 2 Solution
- *  Copyright 2021 first_name last_name
+ *  Copyright 2021 Rylan Simpson
  */
 
 /* Pseudocode
@@ -41,7 +41,6 @@ class TempConverter {
     }
 }
 
-
 public class Solution18 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -66,7 +65,7 @@ public class Solution18 {
         }
         else {
             System.out.print("Please enter a proper response.");
-            System.exit(-1);
+            System.exit(0);
         }
         System.out.printf("Converting from %s to %s, the temperature is %.2f", tempType1, tempType2, temperature);
     }
