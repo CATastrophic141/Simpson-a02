@@ -3,7 +3,7 @@
  *  Copyright 2021 Rylan Simpson
  */
 
-/*Import proper utilities
+/* Import proper utilities
 * Create Checkout class for item entry, subtotal calculation and tax calculation methods
 * Create tax rate constant
 * For prompt item method, prompt user to enter item quantity,
@@ -20,8 +20,7 @@
 *           call item method
 * Call subtotal method
 * Call tax calculation method
-* Print out the subtotal, tax, and total price
-*/
+* Print out the subtotal, tax, and total price */
 
 import java.util.Scanner;
 
@@ -48,6 +47,11 @@ class Checkout {
     public double taxCalc(double subTotal) {
         return subTotal + subTotal*TAX_RATE;
     }
+    public void checkoutPrint(double subTotal, double finalTotal) {
+        System.out.printf("Your subtotal is: $%.2f%n", subTotal);
+        System.out.printf("Total tax is: $%.2f%n", subTotal*TAX_RATE);
+        System.out.printf("The total price is: $%.2f%n", finalTotal);
+    }
 }
 
 public class Solution10 {
@@ -61,8 +65,6 @@ public class Solution10 {
             checkout.itemEntry(numItems, itemQuantity, itemPrice);
             double subTotal = checkout.subtotalCalc(numItems, itemQuantity, itemPrice);
             double finalTotal = checkout.taxCalc(subTotal);
-            System.out.printf("Your subtotal is: $%.2f%n", subTotal);
-            System.out.printf("Total tax is: $%.2f%n", subTotal*Checkout.TAX_RATE);
-            System.out.printf("The total price is: $%.2f%n", finalTotal);
+            checkout.checkoutPrint(subTotal, finalTotal);
     }
 }

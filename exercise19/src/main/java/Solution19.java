@@ -19,7 +19,7 @@
 * Prompt user for weight and height
 * Save input to variables
 * Call BMI calc method
-* Call BMI report method*/
+* Call BMI report method */
 
 import java.util.Scanner;
 
