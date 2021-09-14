@@ -46,9 +46,9 @@ class TaxCalc {
     private static final String TAX_IS = "\nYour tax total is: $";
 
     public String wiTaxPrint(String userState, String userCounty, double order) {
-        if (Objects.equals(userState, WI)) {
+        if (Objects.equals(userState, WI) || Objects.equals(userState, "WI")) {
             double tax = (Math.ceil((order * WI_TAX)*100) / 100);
-            if (Objects.equals(userCounty, "Eau")) {
+            if (Objects.equals(userCounty, "Eau Claire")) {
                 tax = tax + (Math.ceil((order * EAU_TAX)*100) / 100);
                 return SUB_IS + (Math.ceil(order*100) / 100) + TAX_IS + tax + "\n";
             } else if (Objects.equals(userCounty, "Dunn")) {
@@ -62,15 +62,15 @@ class TaxCalc {
 
     public double taxAmt(String userState, String userCounty, double order) {
         double tax = 0;
-        if (Objects.equals(userState, WI)) {
+        if (Objects.equals(userState, WI) || Objects.equals(userState, "WI")) {
             tax = (Math.ceil((order * WI_TAX)*100) / 100);
-            if (Objects.equals(userCounty, "Eau")) {
+            if (Objects.equals(userCounty, "Eau Claire")) {
                 tax = tax + (Math.ceil((order * EAU_TAX)*100) / 100);
             } else if (Objects.equals(userCounty, "Dunn")) {
                 tax = tax + (Math.ceil((order * DUNN_TAX)*100) / 100);
             }
         }
-        else if (Objects.equals(userState, IL)) {
+        else if (Objects.equals(userState, IL) || Objects.equals(userState, "IL")) {
             tax = (Math.ceil((order * IL_TAX)*100) / 100);
         }
         return tax+order;
@@ -92,13 +92,14 @@ public class Solution20 {
         String taxResult = "";
         System.out.printf("Enter your order price:%n");
         double subtotal = input.nextDouble();
+        input.nextLine();
         subtotal = (Math.ceil(subtotal * 100) / 100);
         System.out.printf("Enter your state:%n");
-        String state = input.next();
+        String state = input.nextLine();
         String county = "";
         if (Objects.equals(state, TaxCalc.WI)) {
             System.out.printf("Enter your county:%n");
-            county = input.next();
+            county = input.nextLine();
             taxResult = tax.wiTaxPrint(state, county, subtotal);
         }
         if (Objects.equals(state, TaxCalc.IL)) {
