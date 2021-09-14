@@ -46,16 +46,17 @@ class TaxCalc {
     private static final String TAX_IS = "\nYour tax total is: $";
 
     public String wiTaxPrint(String userState, String userCounty, double order) {
+        order = (Math.ceil((order)*100) / 100);
         if (Objects.equals(userState, WI) || Objects.equals(userState, "WI")) {
             double tax = (Math.ceil((order * WI_TAX)*100) / 100);
             if (Objects.equals(userCounty, "Eau Claire")) {
                 tax = tax + (Math.ceil((order * EAU_TAX)*100) / 100);
-                return SUB_IS + (Math.ceil(order*100) / 100) + TAX_IS + tax + "\n";
+                return SUB_IS + (Math.ceil(order*100) / 100) + TAX_IS + (Math.ceil((tax)*100) / 100) + "\n";
             } else if (Objects.equals(userCounty, "Dunn")) {
                 tax = tax + (Math.ceil((order * DUNN_TAX)*100) / 100);
-                return SUB_IS + (Math.ceil(order*100) / 100) + TAX_IS + tax + "\n";
+                return SUB_IS + (Math.ceil(order*100) / 100) + TAX_IS + (Math.ceil((tax)*100) / 100) + "\n";
             }
-            return SUB_IS + (Math.ceil(order*100) / 100) + TAX_IS + tax + "\n";
+            return SUB_IS + (Math.ceil(order*100) / 100) + TAX_IS + (Math.ceil((tax)*100) / 100) + "\n";
         }
         return "";
     }
@@ -77,9 +78,10 @@ class TaxCalc {
     }
 
     public String ilTaxPrint(String userState, double order) {
+        order = (Math.ceil((order)*100) / 100);
         if (Objects.equals(userState, IL)) {
             double tax = (Math.ceil(order*100) / 100) * IL_TAX;
-            return SUB_IS + order + TAX_IS  + tax + "\n";
+            return SUB_IS + order + TAX_IS  + (Math.ceil((tax)*100) / 100) + "\n";
         }
         return "";
     }
