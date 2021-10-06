@@ -34,6 +34,8 @@ public class Solution15 {
         Scanner input = new Scanner(System.in);
         Login login = new Login();
         String setPassword = "Pass123$";
+        System.out.printf("What is your username?%n");
+        input.nextLine();
         System.out.printf("What is the password?%n");
         String userIn = input.nextLine();
         login.passwordMatch(userIn, setPassword);
